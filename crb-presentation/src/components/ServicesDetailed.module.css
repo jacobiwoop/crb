@@ -1,0 +1,195 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.serviceSection {
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Image Styles */
+.imageWrapper {
+    flex: 1;
+    height: 500px;
+    overflow: hidden;
+    /* Clean rectangular look */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15); 
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.serviceSection:hover .image {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Content Styles */
+.content {
+    flex: 1;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 50px;
+}
+
+.subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 40px;
+    height: 2px;
+    background: currentColor;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.ctaButton {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background: transparent;
+    border: 2px solid currentColor;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    background: currentColor;
+    color: white; /* Will be overridden by theme usually, but safe default */
+}
+
+/* --- THEMES --- */
+
+/* Light Theme (Commercial) */
+.light {
+    background: white;
+    color: #1a1a1a;
+}
+.light .subtitle { color: #FF4D4D; }
+.light .ctaButton { border-color: #1a1a1a; color: #1a1a1a; }
+.light .ctaButton:hover { background: #1a1a1a; color: white; }
+.light .checkIcon { color: #FF4D4D; }
+
+/* Dark Theme (Private) */
+.dark {
+    background: #121212;
+    color: white;
+}
+.dark .subtitle { color: #FFD700; }
+.dark .ctaButton { border-color: #FFD700; color: #FFD700; }
+.dark .ctaButton:hover { background: #FFD700; color: #121212; }
+.dark .checkIcon { color: #FFD700; }
+
+/* Production Theme (Dark Blue/Neon) */
+.production {
+    background: #0a0e17;
+    color: #e0e6ed;
+}
+.production .subtitle { color: #00d2ff; } /* Cyan/Electric Blue */
+.production .ctaButton { border-color: #00d2ff; color: #00d2ff; }
+.production .ctaButton:hover { background: #00d2ff; color: #0a0e17; }
+.production .checkIcon { color: #00d2ff; }
+
+/* Wedding Theme (Soft/Elegant) */
+.wedding {
+    background: #fdfbf7; /* Very light cream */
+    color: #4a4a4a;
+}
+.wedding .title { font-family: 'Playfair Display', serif; font-style: italic; }
+.wedding .subtitle { color: #d4a373; /* Soft Gold/Beige */ }
+.wedding .ctaButton { border-color: #d4a373; color: #d4a373; }
+.wedding .ctaButton:hover { background: #d4a373; color: white; }
+.wedding .checkIcon { color: #d4a373; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+        padding: 0 1.5rem;
+    }
+
+    .reverse {
+        flex-direction: column;
+    }
+
+    .subtitle::before {
+        display: none;
+    }
+    
+    .subtitle {
+        padding-left: 0;
+    }
+
+    .featureList {
+        grid-template-columns: 1fr;
+        text-align: left;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .imageWrapper {
+        height: 300px;
+        width: 100%;
+        order: -1; /* Always show image first on mobile? */
+    }
+}

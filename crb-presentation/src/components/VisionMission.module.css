@@ -1,0 +1,89 @@
+.section {
+    padding: 6rem 2rem;
+    background: #ffffff;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 5rem;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #12283C; /* Dark Blue */
+    margin-bottom: 1.5rem;
+}
+
+.missionText {
+    font-family: 'Inter', sans-serif;
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconWrapper {
+    width: 100px;
+    height: 100px;
+    background-color: #12283C; /* Dark Blue from image */
+    color: #FFD700; /* Gold Icon */
+    border: 4px solid #FFD700; /* Gold Border */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .iconWrapper {
+    transform: translateY(-10px);
+}
+
+.valueTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #12283C;
+    margin-bottom: 1rem;
+}
+
+.valueDesc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        gap: 3rem;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+}

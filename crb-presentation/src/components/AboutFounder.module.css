@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@600&display=swap');
+
+.section {
+    padding: 8rem 2rem;
+    background-color: #F9F7F2; /* Cream/Beige background */
+    color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contentWrapper {
+    display: flex; /* Changed from grid to flex for better control over the specific overlap look if needed, but flex/grid both work. Keeping flex for side-by-side */
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image Column Styles */
+.imageColumn {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.imageFrame {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+/* The dark blue offset rectangle behind the image */
+.imageBackground {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    bottom: -20px;
+    left: 20px;
+    background-color: #12283C; /* Dark Blue */
+    z-index: 1;
+}
+
+.founderImage {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 2;
+    border: 8px solid white; /* The white border around the image */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Text Column Styles */
+.textColumn {
+    flex: 1;
+    max-width: 600px;
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #12283C; /* Match graphic blue */
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    color: #E63946; /* Red accent */
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+}
+
+.bio p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #12283C;
+    margin-top: 2rem;
+    transform: rotate(-5deg);
+}
+
+/* Decorative Particles (Gold specks) */
+.particle1, .particle2, .particle3 {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.particle1 { top: 10%; right: 5%; }
+.particle2 { bottom: 15%; left: 8%; }
+.particle3 { top: 40%; right: 45%; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contentWrapper {
+        flex-direction: column;
+        gap: 4rem;
+        text-align: center;
+    }
+
+    .imageBackground {
+        right: -10px;
+        left: 10px;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .signature {
+        display: inline-block;
+    }
+}

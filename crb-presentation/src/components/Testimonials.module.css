@@ -1,0 +1,135 @@
+.section {
+    padding: 8rem 0;
+    background: #1a1a1a;
+    color: white;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #f5f5f5;
+}
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background: #FFD700; /* Gold */
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Gradients to fade edges */
+.gradientLeft, .gradientRight {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gradientLeft {
+    left: 0;
+    background: linear-gradient(to right, #1a1a1a, transparent);
+}
+
+.gradientRight {
+    right: 0;
+    background: linear-gradient(to left, #1a1a1a, transparent);
+}
+
+.track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    padding: 0 1rem;
+}
+
+.card {
+    background: #2a2a2a;
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 400px;
+    flex-shrink: 0;
+    position: relative;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #FFD700;
+}
+
+.quoteIcon {
+    color: #FF4D4D; /* Red accent */
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.authorBox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatarPlaceholder {
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+}
+
+.author {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin: 0;
+    color: white;
+}
+
+.role {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 300px;
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+}
