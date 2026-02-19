@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import AboutFounder from '../components/AboutFounder';
 import VisionMission from '../components/VisionMission';
 import styles from './About.module.css';
-import founderImg from '../assets/images/about/founder.jpg';
 
 const teamMembers = [
     {
